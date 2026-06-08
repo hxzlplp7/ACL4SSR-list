@@ -1,44 +1,40 @@
 # Clash Rule List - V2bX 审计规则集
-# 适用于配置转换器（如 Subconverter）、ACL4SSR 规则分流或 Clash 外部规则列表 (Rule List)
-# 已针对 Go 正则引擎进行安全优化，去除了原版中可能导致全局断网的 "||" 空匹配 bug，并转义了特殊字符。
-# 已根据需求移除：邮件协议/邮箱域名审计、测速/测试页面审计。
 
-# 1. 百度与地图相关的 API 审计规则
+# 百度与地图相关 API
 DOMAIN-REGEX,(api|ps|sv|offnavi|newvector|ulog\.imap|newloc)(\.map)?\.(baidu|n\.shifen)\.com
 
-# 2. 360/搜狗相关域名审计
+# 360 / 搜狗
 DOMAIN-REGEX,(360|so)\.(cn|com)
 DOMAIN-REGEX,360\.(cn|com|net)
 
-# 3. BT/磁力/P2P 流量关键字审计（防止版权纠纷或流量滥用）
+# BT / 磁力 / P2P
 DOMAIN-REGEX,(torrent|\.torrent|peer_id=|info_hash|get_peers|find_node|BitTorrent|announce_peer|announce\.php\?passkey=)
 DOMAIN-REGEX,(ed2k|\.torrent|peer_id=|announce|info_hash|get_peers|find_node|BitTorrent|announce_peer|announce\.php\?passkey=|magnet:|xunlei|sandai|Thunder|XLLiveUD|bt_key)
 
-# 4. 迅雷与 P2P 下载软件审计
+# 迅雷
 DOMAIN-REGEX,(xunlei|sandai|Thunder|XLLiveUD)
 
-# 5. 敏感及特定新闻/翻墙工具/反共等政治敏感网站审计
+# 敏感网站
 DOMAIN-REGEX,(dafahao|mingjinglive|botanwang|minghui|dongtaiwang|falunaz|epochtimes|ntdtv|falundafa|falungong|wujieliulan|zhengjian)\.(org|com|net)
-DOMAIN-REGEX,(gov|12377|12315|talk\.news\.pts\.org|creaders|zhuichaguoji|efcc\.org|cyberpolice|aboluowang|tuidang|epochtimes|zhengjian|110\.qq|mingjingnews|inmediahk|xinsheng|breakgfw|chengmingmag|jinpianwang|qi-gong|mhradio|edoors|renminbao|soundofhope|xizang-zhiye|bannedbook|ntdtv|12321|secretchina|dajiyuan|boxun|chinadigitaltimes|dwnews|huaglad|oneplusnews|epochweekly|cn\.rfi)\.(cn|com|org|net|club|net|fr|tw|hk|eu|info|me)
 
-# 6. 电脑管家/杀毒软件相关域名审计（防止安全软件探测节点）
+# 安全软件
 DOMAIN-REGEX,(guanjia\.qq\.com|qqpcmgr|QQPCMGR)
 DOMAIN-REGEX,(rising|kingsoft|duba|xindubawukong|jinshanduba)\.(com|net|org)
 
-# 7. 宽频/Tor 项目审计
+# Tor
 DOMAIN-REGEX,(netvigator|torproject)\.(com|cn|net|org)
 
-# 8. 金融/银行/支付相关域名审计
+# 金融
 DOMAIN-REGEX,(visa|beanfun|bank)\.
 DOMAIN-REGEX,\.bank\.
 DOMAIN-REGEX,(mycard)\.(com|tw)
 DOMAIN-REGEX,(gash)\.(com|tw)
 
-# 9. 广告追踪与数据统计审计
+# 统计追踪
 DOMAIN-REGEX,(miaozhen|cnzz|talkingdata|umeng)\.(cn|com)
 
-# 10. 论坛与社交网站审计
+# 论坛
 DOMAIN-REGEX,pincong\.rocks
 
-# 11. 淘宝网审计
+# 淘宝
 DOMAIN-REGEX,taobao\.com
