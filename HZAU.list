@@ -1,6 +1,6 @@
 # 华农相关
-DOMAIN-SUFFIX,hzau.edu.cn
-DOMAIN-KEYWORD,hzau
+DOMAIN-SUFFIX,hzau.edu.cn,no-resolve
+DOMAIN-KEYWORD,hzau,no-resolve
 
 # 192.168.8.0/24
 IP-CIDR,192.168.8.0/24,no-resolve
